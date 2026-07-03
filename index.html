@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>每日数据</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      font-size: 16px;
+      white-space: pre-wrap;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>今日数据</h2>
+
+  <pre id="data"></pre>
+
+  <button onclick="copyData()">一键复制</button>
+
+  <script>
+    // 👇 这里以后你每天只改这一行
+    const data = `
+00002 00003 00004 00012 00013 00014
+00020 00021 00022 00023 00024 00025
+00026 00027 00028 00029 00030 00031
+`;
+
+    document.getElementById("data").innerText = data.trim();
+
+    function copyData() {
+      navigator.clipboard.writeText(data.trim());
+      alert("已复制！");
+    }
+  </script>
+</body>
+</html>
